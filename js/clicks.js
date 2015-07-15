@@ -4,7 +4,7 @@
 
 function Cat(Name){
   this.name = Name;
-  this.NumClicks = 0;
+  this.numClicks = 0;
 }
 
 var cats = [
@@ -18,6 +18,26 @@ var cats = [
 var numClicks = [0,0];
 $(document).ready(function(){
   displayCatList();
+  
+  //use jQuery selector to loop through each element of the list
+  $("#cat-list li").each(function (index) {
+    console.log(index + ": " + $(this).text());
+    //set a click handler for each name in the list
+    $(this).click(function(e){
+      var name = $(this).text();
+      var fileName = "img/" + name + ".jpg";
+      $("#cat-name").text(name);
+      $("#cat-img").attr("src",fileName);
+    });
+
+  });
+
+  $("#cat-img").click(function(e) {
+    var name = $("#cat-name").text();
+    console.log(name);
+    //cats[index].numClicks++;
+    //$("#cat-clicks").text("Num clicks: " + cats[index].numClicks);
+  });
 
   //$("#kitten-img").click(function(e) {
     //numClicks[0]++;
