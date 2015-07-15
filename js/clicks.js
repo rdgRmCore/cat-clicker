@@ -52,7 +52,7 @@ $(document).ready(function(){
 function displayCatList(){
   var cat;
   for (cat in cats){
-    var catLi = "<li>" + cats[cat].name + "</li>";
+    var catLi = "<li id=\"cat-list-item\" >" + cats[cat].name + "</li>";
     $("#cat-list").append(catLi);
   }
 }
