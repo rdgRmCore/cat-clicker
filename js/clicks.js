@@ -28,6 +28,7 @@ $(document).ready(function(){
       var fileName = "img/" + name + ".jpg";
       $("#cat-name").text(name);
       $("#cat-img").attr("src",fileName);
+      $("#cat-clicks").text("Num clicks: " + cats[index].numClicks);
     });
 
   });
@@ -35,20 +36,17 @@ $(document).ready(function(){
   $("#cat-img").click(function(e) {
     var name = $("#cat-name").text();
     console.log(name);
-    //cats[index].numClicks++;
-    //$("#cat-clicks").text("Num clicks: " + cats[index].numClicks);
+
+    var cat;
+    for (cat in cats){
+      if (cats[cat].name == name){
+        console.log("Found index : " + cat);
+        cats[cat].numClicks++;
+        $("#cat-clicks").text("Num clicks: " + cats[cat].numClicks);
+      }
+    }
   });
 
-  //$("#kitten-img").click(function(e) {
-    //numClicks[0]++;
-    //$("#kitten-clicks").text("Num clicks: " + numClicks[0]);
-    
-  //});
-  //$("#chewie-img").click(function(e) {
-    //numClicks[1]++;
-    //$("#chewie-clicks").text("Num clicks: " + numClicks[1]);
-    
-  //});
 });
 
 function displayCatList(){
