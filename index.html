@@ -31,25 +31,31 @@
         </div>
         <div class="row">
             <div class="col-xs-3">
-                <button name="admin">Admin</button>
+                <button name="admin" class="btn btn-info">Admin</button>
             </div>
             <div class="col-xs-9">
-                <form>
-                    <div class="row">
-                        <label for="cat-name-input">Name</label>
-                        <input id="cat-name-inpput" type="text">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="cat-name-input" class="control-label col-xs-2">Name</label>
+                        <div class="col-xs-7">
+                            <input id="cat-name-input" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cat-url-input" class="control-label col-xs-2">ImgUrl</label>
+                        <div class="col-xs-7">
+                            <input id="cat-url-inpput" type="text" class="form-control">
+                        </div>
                     </div>
                     <div class="row">
-                        <label for="cat-url-input">ImgUrl</label>
-                        <input id="cat-url-inpput" type="text">
-                    </div>
-                    <div class="row">
-                        <label for="cat-clicks-input">Number of Clicks</label>
-                        <input id="cat-clicks-inpput" type="text">
+                        <label for="cat-clicks-input" class="control-label col-xs-2">Num Clicks</label>
+                        <div class="col-xs-7">
+                            <input id="cat-clicks-inpput" type="text" class="form-control">
+                        </div>
                     </div>
                 </form>
-                <button name="cancel">Cancel</button>
-                <button name="save">Save</button>
+                <button name="cancel" class="btn">Cancel</button>
+                <button name="save" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
