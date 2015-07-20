@@ -4,6 +4,8 @@
 
 var Model = {
 
+    "visible": "false",
+
     cats: [
       {"name": "chewie",     "numClicks": 0},
       {"name": "furry",      "numClicks": 0},
@@ -28,6 +30,16 @@ var Model = {
         return cat;
       }
     }
+  },
+  ToggleAdmin: function(){
+    if(Model.visible == "false"){
+      Model.visible = "true";
+    } else {
+      Model.visible = "false";
+    }
+  },
+  IsAdminVisible: function(){
+    return Model.visible;
   }
 };
 
@@ -38,6 +50,7 @@ $(document).ready(function(){
 var Controller = {
   Init: function(){
     CatListView.render();
+    AdminView.render();
 
     //use jQuery selector to loop through each element of the cat list
     $("#cat-list li").each(function (index) {
@@ -57,6 +70,13 @@ var Controller = {
       CatDetailView.UpdateClicks(Model.GetNumClicks(index));
 
     });
+    
+    //Set Click handler for Admin Button
+    $('[name="admin"]').click(function(e) {
+      Model.ToggleAdmin();
+      AdminView.render(Model.IsAdminVisible());
+    });
+    
   },
 
   GetCats: function(){
@@ -85,7 +105,16 @@ var CatDetailView = {
   UpdateClicks: function(NumClicks){
     $("#cat-clicks").text("Num clicks: " + NumClicks);
   }
-  
+}
+
+var AdminView = {
+  render: function(Visible){
+    if(Visible == "true"){
+      $("#admin-form").show();
+    } else {
+      $("#admin-form").hide();
+    }
+  }
 
 }
 
