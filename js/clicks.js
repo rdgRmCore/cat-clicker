@@ -75,12 +75,6 @@ var Controller = {
 
     });
     
-    //Set Click handler for Admin Button
-    $('[name="admin"]').click(function(e) {
-      Model.ToggleAdmin();
-      AdminView.render(Model.IsAdminVisible());
-    });
-    
   },
 
   GetCats: function(){
