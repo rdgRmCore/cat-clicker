@@ -77,7 +77,7 @@ var CatListView = {
     var cat;
     for (cat in cats){
       var catLi = "<li id=\"cat-list-item\" >" + cats[cat].name + "</li>" + 
-                  "<span id=\"cat-clicks\"> 0</span>";
+                  "<span>0</span>";
       $("#cat-list").append(catLi);
     }
   }
@@ -91,6 +91,6 @@ var CatDetailView = {
         CatDetailView.UpdateClicks(Clicks);
   },
   UpdateClicks: function(NumClicks, Index){
-    $("li").eq(Index).next().text( NumClicks);
+    $("li").eq(Index).next().text(NumClicks);
   }
 }
