@@ -33,16 +33,6 @@ var Model = {
         return cat;
       }
     }
-  },
-  ToggleAdmin: function(){
-    if(Model.visible == "false"){
-      Model.visible = "true";
-    } else {
-      Model.visible = "false";
-    }
-  },
-  IsAdminVisible: function(){
-    return Model.visible;
   }
 };
 
@@ -53,7 +43,6 @@ $(document).ready(function(){
 var Controller = {
   Init: function(){
     CatListView.render();
-    AdminView.render("false");
     CatDetailView.render(0, Model.GetCatName(0), Model.GetNumClicks(0));
 
     //use jQuery selector to loop through each element of the cat list
@@ -71,7 +60,7 @@ var Controller = {
       var index = Model.FindIndex(name);
 
       Model.IncrementNumClicks(index);
-      CatDetailView.UpdateClicks(Model.GetNumClicks(index));
+      CatDetailView.UpdateClicks(Model.GetNumClicks(index), index);
 
     });
     
@@ -87,7 +76,8 @@ var CatListView = {
     var cats = Controller.GetCats();
     var cat;
     for (cat in cats){
-      var catLi = "<li id=\"cat-list-item\" >" + cats[cat].name + "</li>";
+      var catLi = "<li id=\"cat-list-item\" >" + cats[cat].name + "</li>" + 
+                  "<span id=\"cat-clicks\"> 0</span>";
       $("#cat-list").append(catLi);
     }
   }
@@ -100,7 +90,7 @@ var CatDetailView = {
         $("#cat-img").attr("src",fileName);
         CatDetailView.UpdateClicks(Clicks);
   },
-  UpdateClicks: function(NumClicks){
-    $("#cat-clicks").text("Num clicks: " + NumClicks);
+  UpdateClicks: function(NumClicks, Index){
+    $("li").eq(Index).next().text( NumClicks);
   }
 }
