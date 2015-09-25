@@ -104,17 +104,3 @@ var CatDetailView = {
     $("#cat-clicks").text("Num clicks: " + NumClicks);
   }
 }
-
-var AdminView = {
-  render: function(Visible){
-    if(Visible == "true"){
-      //$("#cat-name-input").{
-      $("#admin-form").show();
-    } else {
-      $("#admin-form").hide();
-    }
-  }
-
-}
-
-
