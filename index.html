@@ -17,45 +17,16 @@
   <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-md-3">
               <h2> Choose a cat. </h2>
               <ul id="cat-list">
               </ul>
             </div>
     
-            <div class="col-xs-9">
+            <div class="col-md-9">
                 <h2 id="cat-name">kitten</h2>
-                <img id="cat-img" src="img/kitten.jpg">
+                <img id="cat-img" class="img-responsive" src="img/kitten.jpg">
                 <h2 id="cat-clicks">Num clicks: 0</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <button name="admin" class="btn btn-info">Admin</button>
-            </div>
-            <div id="admin-form" class="col-xs-9">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="cat-name-input" class="control-label col-xs-2">Name</label>
-                        <div class="col-xs-7">
-                            <input id="cat-name-input" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="cat-url-input" class="control-label col-xs-2">ImgUrl</label>
-                        <div class="col-xs-7">
-                            <input id="cat-url-inpput" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label for="cat-clicks-input" class="control-label col-xs-2">Num Clicks</label>
-                        <div class="col-xs-7">
-                            <input id="cat-clicks-inpput" type="text" class="form-control">
-                        </div>
-                    </div>
-                </form>
-                <button name="cancel" class="btn">Cancel</button>
-                <button name="save" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>

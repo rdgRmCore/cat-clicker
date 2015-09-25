@@ -17,6 +17,9 @@ var Model = {
   GetAllCats: function(){
     return Model.cats;
   },
+  GetCatName: function(index){
+    return Model.cats[index].name;
+  },
   GetNumClicks: function(index){
     return Model.cats[index].numClicks;
   },
@@ -50,7 +53,8 @@ $(document).ready(function(){
 var Controller = {
   Init: function(){
     CatListView.render();
-    AdminView.render();
+    AdminView.render("false");
+    CatDetailView.render(0, Model.GetCatName(0), Model.GetNumClicks(0));
 
     //use jQuery selector to loop through each element of the cat list
     $("#cat-list li").each(function (index) {
@@ -110,6 +114,7 @@ var CatDetailView = {
 var AdminView = {
   render: function(Visible){
     if(Visible == "true"){
+      //$("#cat-name-input").{
       $("#admin-form").show();
     } else {
       $("#admin-form").hide();
