@@ -7,11 +7,11 @@ var Model = {
     "visible": "false",
 
     cats: [
-      {"name": "chewie",     "numClicks": 0},
-      {"name": "furry",      "numClicks": 0},
-      {"name": "kitten",     "numClicks": 0},
-      {"name": "sockington", "numClicks": 0},
-      {"name": "watson",     "numClicks": 0}
+      {"name": "sasha",       "numClicks": 0},
+      {"name": "seghen",      "numClicks": 0},
+      {"name": "samson",      "numClicks": 0},
+      {"name": "kitten",      "numClicks": 0},
+      {"name": "pang",        "numClicks": 0}
     ],
 
   GetAllCats: function(){
