@@ -81,12 +81,36 @@ var CatListView = {
     var cats = Controller.GetCats();
     var cat;
     for (cat in cats){
-      var catLi = "<li id=\"cat-list-item\" class=\"list-group-item\">" + 
+      var catLi = "<li id=\"cat-list-item\" >" +
                   cats[cat].name + "<span class=\"badge\"> 0</span></li>";
       $("#cat-list").append(catLi);
     }
+    this.setCss();
+  },
+  setCss: function(){
+    var cssWidth = parseInt($(".container").css("width"));
+    var groupClass = "list-group";
+    var itemClass = "list-group-item";
+
+    $("ul").removeClass();
+    
+    /*
+     * Width of break point is 750 see:
+     * http://getbootstrap.com/css/#grid-options
+     */
+    if (cssWidth <= 750){
+      groupClass = "list-group-horizontal";
+      itemClass += " item-horizontal";
+      $("ul").addClass("list-inline");
+    }
+    $("#cat-group").removeClass().addClass(groupClass);
+    $("li").removeClass().addClass(itemClass);
   }
 }
+
+$(window).resize(function() {
+  CatListView.setCss();
+});
 
 var CatDetailView = {
   render: function(Index,Name,Clicks){
