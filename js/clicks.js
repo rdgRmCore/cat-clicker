@@ -55,6 +55,14 @@ var Controller = {
         var name = text.substr(0, text.indexOf(' ')); 
 
         CatDetailView.render(index, name, Model.GetNumClicks(index));
+
+        // Using jQuery, check for any active list items
+        if($(".active").length){
+          // clear any active list items
+          $(".active").removeClass("active");
+        }
+
+        $("li").eq(index).addClass("active");
       });
 
     });
@@ -100,11 +108,14 @@ var CatListView = {
      */
     if (cssWidth <= 750){
       groupClass = "list-group-horizontal";
-      itemClass += " item-horizontal";
+      itemClass += "item-horizontal";
       $("ul").addClass("list-inline");
+      $("li").addClass(itemClass);
+    } else {
+      $("li").addClass(itemClass);
+      $("li").removeClass("item-horizontal");
     }
     $("#cat-group").removeClass().addClass(groupClass);
-    $("li").removeClass().addClass(itemClass);
   }
 }
 
@@ -121,5 +132,6 @@ var CatDetailView = {
   },
   UpdateClicks: function(NumClicks, Index){
     $("li").eq(Index).children().text(" " + NumClicks);
+
   }
 }
