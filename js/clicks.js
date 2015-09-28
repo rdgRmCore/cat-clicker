@@ -134,6 +134,13 @@ var CatDetailView = {
         $("#cat-name").text(Name);
         $("#cat-img").attr("src",fileName);
         CatDetailView.UpdateClicks(Clicks);
+
+        //special case
+        if ("pang" == Name){
+          $("#cat-img").addClass("img-circle");
+        } else {
+          $("#cat-img").removeClass("img-circle");
+        }
   },
   UpdateClicks: function(NumClicks, Index){
     $("li").eq(Index).children().text(" " + NumClicks);
