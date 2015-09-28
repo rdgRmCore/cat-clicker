@@ -49,7 +49,12 @@ var Controller = {
     $("#cat-list li").each(function (index) {
       //set a click handler for each name in the list
       $(this).click(function(e){
-        CatDetailView.render(index, $(this).text(), Model.GetNumClicks(index));
+        var text = $(this).text();
+
+        //grab substring before first space
+        var name = text.substr(0, text.indexOf(' ')); 
+
+        CatDetailView.render(index, name, Model.GetNumClicks(index));
       });
 
     });
@@ -76,8 +81,8 @@ var CatListView = {
     var cats = Controller.GetCats();
     var cat;
     for (cat in cats){
-      var catLi = "<li id=\"cat-list-item\" >" + cats[cat].name + "</li>" + 
-                  "<span>0</span>";
+      var catLi = "<li id=\"cat-list-item\" class=\"list-group-item\">" + 
+                  cats[cat].name + "<span class=\"badge\"> 0</span></li>";
       $("#cat-list").append(catLi);
     }
   }
@@ -91,6 +96,6 @@ var CatDetailView = {
         CatDetailView.UpdateClicks(Clicks);
   },
   UpdateClicks: function(NumClicks, Index){
-    $("li").eq(Index).next().text(NumClicks);
+    $("li").eq(Index).children().text(" " + NumClicks);
   }
 }

@@ -1,5 +1,3 @@
-body { padding-top: 60px; }
-
 #cat-list-item:hover{
   color: blue;
   text-decoration: underline;
