@@ -1,6 +1,17 @@
+body { padding-top: 60px; }
 
 #cat-list-item:hover{
   color: blue;
   text-decoration: underline;
   
+}
+
+.logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
 }
