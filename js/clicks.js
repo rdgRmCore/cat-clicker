@@ -92,6 +92,11 @@ var CatListView = {
       var catLi = "<li id=\"cat-list-item\" >" +
                   cats[cat].name + "<span class=\"badge\"> 0</span></li>";
       $("#cat-list").append(catLi);
+      
+      //set bootstrap active class for first cat in list
+      if (0 == cat){
+        $("li").eq(cat).addClass("active");
+      }
     }
     this.setCss();
   },
@@ -108,7 +113,7 @@ var CatListView = {
      */
     if (cssWidth <= 750){
       groupClass = "list-group-horizontal";
-      itemClass += "item-horizontal";
+      itemClass += " item-horizontal";
       $("ul").addClass("list-inline");
       $("li").addClass(itemClass);
     } else {
