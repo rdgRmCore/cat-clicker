@@ -1,5 +1,8 @@
 All non library software is released under the MIT license.
-All images are released under Creative Commons Share Alicke Attribution license.
+All images (except the kitten phot) are released under 
+Creative Commons Share Alicke Attribution license.
+Kitten photo license at:
+https://www.flickr.com/photos/poplinre/625069434/in/photostream/
 
 The MIT License (MIT)
 
