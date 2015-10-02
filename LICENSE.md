@@ -1,10 +1,12 @@
+# License
+
 All non library software is released under the MIT license.
-All images (except the kitten phot) are released under 
-Creative Commons Share Alicke Attribution license.
+All images (except the kitten photo) are released under 
+Creative Commons Non Commercial Share Alike Attribution license.
 Kitten photo license at:
 https://www.flickr.com/photos/poplinre/625069434/in/photostream/
 
-The MIT License (MIT)
+## The MIT License (MIT)
 
 Copyright (c) [2015] [Rand Daniel Graham]
 
@@ -26,5 +28,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-CCSA License
+## CCSA License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" rel="dct:type">work</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
